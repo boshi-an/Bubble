@@ -48,27 +48,34 @@
 		</section>
 		<!-- Article list -->
 		<?php while($this->next()): ?>
-			<section class="section">
-				<div class="container">
-					<div class="content">
-						<h1><a class="text-default" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
-						<hr/>
-						<span class="badge badge-pill badge-danger text-uppercase"><a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a></span> &nbsp;&nbsp;
-						<span class="badge badge-pill badge-info text-uppercase"><time datetime="<?php $this->date('c'); ?>"><?php $this->date(); ?></time></span> &nbsp;&nbsp;
-						<span class="badge badge-pill badge-success text-uppercase"><?php $this->category('d'); ?></span>
-						<div class="lead">
-							<?php $content = $this->content('...'); ?>
+			<?php if(art_available($this) || $this->user->hasLogin()):?>
+				<section class="section">
+					<div class="container">
+						<div class="card shadow">
+							<div class="card-body">
+								<div class="tab-content" id="myTabContent">
+									<h1><a class="text-default" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
+									<hr/>
+									<span class="badge badge-pill badge-danger text-uppercase"><a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a></span> &nbsp;&nbsp;
+									<span class="badge badge-pill badge-info text-uppercase"><time datetime="<?php $this->date('c'); ?>"><?php $this->date(); ?></time></span> &nbsp;&nbsp;
+									<span class="badge badge-pill badge-success text-uppercase"><?php $this->category('d'); ?></span>
+									<div class="lead">
+										<?php #$content = $this->content('...'); ?>
+										<?php $content = $this->excerpt(300, '...'); ?>
+									</div>
+									<hr/>
+									<a href="<?php $this->permalink() ?>">
+										<button class="btn btn-icon btn-3 btn-primary" type="button">
+											<span class="btn-inner--icon"><i class="ni ni-button-play"></i></span>
+											<span class="btn-inner--text">继续阅读</span>
+										</button>
+									</a>
+								</div>
+							</div>
 						</div>
-						<hr/>
-						<a href="<?php $this->permalink() ?>">
-							<button class="btn btn-icon btn-3 btn-primary" type="button">
-								<span class="btn-inner--icon"><i class="ni ni-button-play"></i></span>
-								<span class="btn-inner--text">继续阅读</span>
-							</button>
-						</a>
 					</div>
-				</div>
-			</section>
+				</section>
+			<?php endif; ?>
 		<?php endwhile; ?>
 		<!-- Toggle page -->
 		<section class="section">

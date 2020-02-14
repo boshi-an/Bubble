@@ -61,6 +61,12 @@
 								<a class="nav-link" href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
 							</li>
 						<?php endwhile; ?>
+						<?php if($this->user->hasLogin()): ?>
+							<li class="nav-item"><a class="nav-link" href="<?php $this->options->adminUrl(); ?>">进入后台(<?php $this->user->screenName(); ?>)</a></li>
+							<li class="nav-item"><a class="nav-link" href="<?php $this->options->logoutUrl(); ?>">退出</a></li>
+						<?php else: ?>
+							<li class="nav-item"><a class="nav-link" href="<?php $this->options->adminUrl('login.php'); ?>">登录</a></li>
+						<?php endif; ?>
 						<li class="nav-item" style="margin-left:1rem;">
 							<form method="post" action="">
 								<div class="row">
