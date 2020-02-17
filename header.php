@@ -17,7 +17,6 @@
 	<link href="<?php $this->options->themeUrl("assets/vendor/nucleo/css/nucleo.css"); ?>" rel="stylesheet">
 
 	<!-- Argon CSS -->
-	<link type="text/css" href="<?php $this->options->themeUrl("assets/css/argon.min.css"); ?>" rel="stylesheet">
 	<link type="text/css" href="<?php $this->options->themeUrl("assets/css/main.css"); ?>" rel="stylesheet">
 
 	<!-- Custom CSS -->

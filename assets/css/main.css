@@ -5698,7 +5698,7 @@ input[type='button'].btn-block
 
 .card-body
 {
-    padding: 1.8rem; 
+    padding: 2.5rem; 
 
     flex: 1 1 auto;
 }
@@ -6202,7 +6202,7 @@ input[type='button'].btn-block
 .badge-success
 {
     color: #1aae6f;
-    background-color: rgba(147, 231, 195, .5);
+    background-color: rgba(85, 199, 150, 0.5);
 }
 .badge-success[href]:hover,
 .badge-success[href]:focus
@@ -18732,7 +18732,10 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
 
 .comment-head a {
 	color: #172b4d;
-	margin-left: 14px;
+}
+
+.comment-head h6 {
+    margin-left: 14px;
 }
 
 .comment-nav a {
