@@ -58,7 +58,8 @@
 									<hr/>
 									<span class="badge badge-pill badge-danger text-uppercase"><a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a></span> &nbsp;&nbsp;
 									<span class="badge badge-pill badge-info text-uppercase"><time datetime="<?php $this->date('c'); ?>"><?php $this->date(); ?></time></span> &nbsp;&nbsp;
-									<span class="badge badge-pill badge-success text-uppercase"><?php $this->category('d'); ?></span>
+									<span class="badge badge-pill badge-success text-uppercase"><?php $this->category('d'); ?></span> &nbsp;&nbsp;
+									<span class="badge badge-pill badge-primary text-uppercase"><?php $this->commentsNum('评论', '1 条评论', '%d 条评论'); ?></span>
 									<div class="lead">
 										<?php #$content = $this->content('...'); ?>
 										<?php $content = $this->excerpt(300, '...'); ?>
