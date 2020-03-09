@@ -25,13 +25,6 @@
 					<div class="row align-items-center justify-content-center">
 						<h5 class="text-white">于 <time datetime="<?php $this->date('c'); ?>"><?php $this->date(); ?></time> 由 <?php $this->author(); ?> 发布</h5>
 					</div>
-					<?php if($this->user->hasLogin()) : ?>
-						<a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php echo $this->cid;?>">
-							<button class="btn btn-1 btn-neutral" type="button">
-								编辑文章
-							</button>
-						</a>
-					<?php endif; ?>
 				</div>
 			</div>
 			<!-- SVG separator -->
